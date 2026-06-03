@@ -8,12 +8,25 @@ class Solution:
         #         else:
         #             continue
         
-        diction={}
+        # diction={}
         n=len(nums)
-        for i in range(n):
-            diction[nums[i]]=i
-        for i in range(n):
-            complement=target-nums[i]
-            if complement in diction and diction[complement] != i:
-                return [i, diction[complement]]
-        return [] 
+        # for i in range(n):
+        #     diction[nums[i]]=i
+        # for i in range(n):
+        #     complement=target-nums[i]
+        #     if complement in diction and diction[complement] != i:
+        #         return [i, diction[complement]]
+        # return [] 
+
+        # for i in range(n):
+        #     c=target-nums[i]
+        #     if c in nums:
+        #         return [i, nums.index(c)]
+        d={}
+        for i, num in enumerate(nums):
+            miss=target-num
+            if miss in d:
+                return [d[miss], i]
+            d[num]=i
+        return []
+
