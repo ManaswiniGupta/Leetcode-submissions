@@ -1,15 +1,14 @@
-class Solution(object):
-    def isAnagram(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
         if len(s)!=len(t):
             return False
+        fs={}
+        ft={}
         for i in s:
-            if i in t:
-                t=t.replace(i,"",1)
-            else:
-                return False
-        return True
+            fs[i]=fs.get(i,0)+1
+        for i in t:
+            ft[i]=ft.get(i,0)+1
+        return fs==ft
+
+
+        
