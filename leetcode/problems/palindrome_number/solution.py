@@ -2,9 +2,17 @@ class Solution:
     def isPalindrome(self, x: int) -> bool:
         if x<0:
             return False
-        else:
-            l=int(str(x)[::-1])
-            if x==l:
-                return True
+        x=str(x)
+        left=0
+        right=len(str(x))-1
+        while left<right:
+            if x[left]==x[right]:
+                left+=1
+                right-=1
             else:
                 return False
+        return True
+
+
+        
+        
